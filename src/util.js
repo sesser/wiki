@@ -16,6 +16,7 @@ export function api(apiOptions, params = {}) {
 		redirects: ''
 	});
 	const url = `${apiOptions.apiUrl}?${querystring.stringify(qs)}`;
+    console.log("Wiki URL:", url)
 	return fetch(url, fetchOptions).then(res => res.json());
 }
 

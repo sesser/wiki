@@ -57,8 +57,10 @@ export default function wiki(options = {}) {
 		return pagination(apiOptions, {
 			list: 'search',
 			srsearch: query,
-			srlimit: limit
-		}, res => res.query.search.map(article => article.title));
+			srlimit: limit,
+            prop: 'info|pageprops|categories',
+            srprop: 'timestamp|size|categorysnippet|snippet'
+		}, res => res.query);
 	}
 
 	/**
